@@ -3,7 +3,7 @@
 	</h1>
  
 <p align="center">
-  <img src="https://github.com/DouglasFreshHabian/MagicKeyVault/blob/main/Graphics/Tux-Chef.png" alt="My Image" width="400">
+  <img src="https://github.com/DouglasFreshHabian/MagicKeyVault/blob/main/Graphics/Tux-The-Sorcerer.png" alt="My Image" width="400">
 </p>
 
 
