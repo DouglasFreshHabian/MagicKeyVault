@@ -217,8 +217,79 @@ Then apply:
 ```bash
 sudo sysctl -p
 ```
+---
+
+## `magicKey.sh` Script 🔮
+
+This script automates the process of checking the **SysRq (System Request) functionality** on a Linux system. It performs the following tasks:
+
+### Key Features: 🌀
+<details> 
+
+ <summary>🖱 Click to Expand</summary>
+ 
+1. **Kernel Version Check:**
+
+   * It checks and displays the current Linux kernel version using the `uname -r` command.
+
+2. **Kernel Configuration Check:**
+
+   * It searches for the `CONFIG_MAGIC_SYSRQ` option in the kernel configuration file (located in `/boot/config-$(uname -r)`) to verify if SysRq functionality is enabled.
+
+3. **Current SysRq Value Breakdown:**
+
+   * It reads the current SysRq value from `/proc/sys/kernel/sysrq`, which is a bitmask determining which SysRq functions are enabled.
+   * The script breaks down the SysRq value into its component flags, explaining which specific functions are enabled or disabled based on the bitmask.
+
+4. **Colorful and Informative Output:**
+
+   * The script uses colorful output to make the results more readable and visually engaging.
+   * It displays the ASCII banner in a random color for added flair.
+   * Each SysRq function is clearly labeled with its description (e.g., "Allow reboot/poweroff enabled").
+
+5. **Error Handling:**
+
+   * The script checks for the presence of necessary files (`/boot/config-$(uname -r)` and `/proc/sys/kernel/sysrq`), and provides informative error messages if these files are missing or inaccessible.
+
+6. **SysRq Flags Explanation:**
+
+   * For each enabled flag in the SysRq value, the script provides a detailed explanation, helping you understand the various functions like syncing filesystems, remounting filesystems as read-only, or sending kill signals to processes.
+
+7. **Reserved Values Handling:**
+
+   * It includes support for reserved values in the SysRq bitmask, notifying the user if a certain flag is reserved for future use or custom functions.
+</details>
+
+### How to Use: 🔧
+
+1. Clone or download the script:
+
+   ```bash
+   git clone https://github.com/DouglasFreshHabian/MagicKeyVault.git
+   ```
+
+2. Navigate to the directory containing the script:
+
+   ```bash
+   cd MagicKeyVault
+   ```
+
+3. Make the script executable:
+
+   ```bash
+   chmod +x magicKey.sh
+   ```
+
+4. Run the script:
+
+   ```bash
+   ./magicKey.sh
+   ```
+
+The script will output the current kernel version, check the `CONFIG_MAGIC_SYSRQ` settings, and break down the current SysRq value to show which functions are enabled.
 
 ---
+
 
 ## 💬 Feedback & Contributions
 
